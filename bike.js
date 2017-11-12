@@ -45,6 +45,8 @@ function twitSampa() {
 
 	let data = init()
 
+	console.log(data)
+
 	let sampa = data.filter((station) => {
 		if(station.data.city === null) {
 			return true;
@@ -52,6 +54,8 @@ function twitSampa() {
 			return false;
 		}
 	})
+
+	console.log(sampa)
 
 	let twit = sampa.filter((station) => {
 		if (station.open === 'true') {
@@ -75,7 +79,7 @@ function twitSampa() {
 	return text;
 }
 
-
+console.log(twitSampa())
 /*
 Bike data model {
 	id: '9896b9ab-ff44-4d1d-8053-826724a78f77',

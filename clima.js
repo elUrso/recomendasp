@@ -10,6 +10,8 @@ app.get('/manha', (req, res) => res.send(twitIt('Bom dia', 'manhã')));
 app.get('/tarde', (req, res) => res.send(twitIt('Boa tarde', 'tarde')));
 app.get('/noite', (req, res) => res.send(twitIt('Boa noite', 'noite')));
 app.get('/madrugada', (req, res) => res.send(twitIt('Boa madrugada', 'madrugada')));
+app.get('/alerta', (req, res) => res.send('#AlertaEmSampa. Cuidado galera, nos bairros Butantã e Pinheiros a velocidade do vento está bem alta. Pode ser perigoso! 😱 '));
+
 
 
 function twitClima() {
