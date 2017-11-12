@@ -1,4 +1,8 @@
 var request = require('sync-request');
+let time = () => {
+	var date = new Date();
+	return String(date.getHours()) + ':'  + String(date.getMinutes())
+}
 
 function twitSampa() {
 	getPost = (url) => {
@@ -61,7 +65,7 @@ function twitSampa() {
 		}
 	})
 
-	let text = String(Math.floor(Math.random()*100)) + " #bikesampa, não há vaga na(s) "
+	let text = time() + " #bikesampa, não há vaga na(s) "
 	twit.map((station) => {
 		text = text + station.data.description.slice(24).slice(0, 30) + ', ';
 	})

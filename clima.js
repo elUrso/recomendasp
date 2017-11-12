@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 var request = require('sync-request');
+let time = () => {
+	var date = new Date();
+	return String(date.getHours()) + ':'  + String(date.getMinutes())
+}
 
 app.get('/manha', (req, res) => res.send(twitIt('Bom dia', 'manhã')));
 app.get('/tarde', (req, res) => res.send(twitIt('Boa tarde', 'tarde')));
@@ -39,7 +43,7 @@ function twitClima() {
 
 function twitIt(frase, periodo) {
 	[c, h] = twitClima()
-	let text = String(Math.floor(Math.random()*100)) +
+	let text = time() +
 		" #TempoEmSampa. " + frase +", a sensação desta " + periodo + " é de " +
 		String(Math.floor(c*100)/100) + 'C com a humidade de ' + String(Math.floor(h*100)/100) + '%.'
 	if(h < 30) {

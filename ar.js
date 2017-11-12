@@ -4,6 +4,11 @@ var request = require('sync-request');
 
 app.get('/ar', (req, res) => res.send(twitAr()));
 
+let time = () => {
+	var date = new Date();
+	return String(date.getHours()) + ':'  + String(date.getMinutes())
+}
+
 
 function twitAr() {
 	getPost = (url) => {
@@ -35,7 +40,7 @@ function twitAr() {
 			}
 		}
 	})
-	let ret = String(Math.floor(Math.random()*100)) +
+	let ret = time() +
 		" A qualidade do #ArEmSampa está boa."
 	if(neighbors != "") {
 		ret = ret + " Exceto nos bairro(s) " + neighbors + '.';
