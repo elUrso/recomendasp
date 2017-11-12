@@ -2,11 +2,13 @@ const express = require('express')
 const app = express()
 var request = require('sync-request');
 
-let twit = twitSampa();
 let time = () => {
 	var date = new Date();
 	return String(date.getHours()) + ':'  + String(date.getMinutes())
 }
+
+let twit = twitSampa();
+
 
 app.get('/twit', (req, res) => res.send(twit));
 
